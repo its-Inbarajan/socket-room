@@ -1,0 +1,6 @@
+User info - name
+
+- two users will join the socket by name and userId
+- if two users are idle and connected on the socket, then create a room and send room details and other user details to them via socket
+- if any user wants to leave the room then send a event and leave the room
+- now both users will be available again to join with any other random user, so mark and keep their status to create next rooms
