@@ -12,5 +12,20 @@
   <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
   <script>
     const socket = io();
+
+    socket.emit("join_room", { name: "inba", userId: "1234" });
+
+    socket.on("roomCreated", (data) => {
+      console.log("Room Details :", data);
+    });
+
+    socket.on("roomClosed", () => {
+      console.log("|Room Closed, you are available again.");
+    });
+
+    // Example leave room after 10s
+    setTimeout(() => {
+      socket.emit("leave", "room-Nv9thMSeyKzVH80eAAAJ--BN-MnZ6pJjujIEfAAAL");
+    }, 10000); // 10s
   </script>
 </html>
